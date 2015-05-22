@@ -1,2 +1,2 @@
-# architecture
-testing of new architectures
+# geoip
+query geolocations of given ip
