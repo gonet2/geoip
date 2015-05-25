@@ -12,8 +12,6 @@ const (
 	_port = ":50000"
 )
 
-var ()
-
 func main() {
 	// 监听
 	lis, err := net.Listen("tcp", _port)
