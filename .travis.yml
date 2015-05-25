@@ -3,7 +3,7 @@ language: go
 go:
       - tip
 install:
-    wget -qO- https://raw.githubusercontent.com/pote/gpm/v1.3.2/bin/gpm | bash
+    ./gpm
     go install geoip
 
 
