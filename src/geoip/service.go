@@ -37,15 +37,15 @@ type server struct {
 
 func (s *server) init() {
 	// 载入IP表
-	log.Trace(SERVICE, "Loading GEOIP City...")
+	log.Trace("Loading GEOIP City...")
 	reader, err := maxminddb.Open(s.data_path())
 	if err != nil {
-		log.Critical(SERVICE, err)
+		log.Critical(err)
 		os.Exit(-1)
 	}
 
 	s.mmdb = reader
-	log.Trace(SERVICE, "GEOIP City Load Complete.")
+	log.Trace("GEOIP City Load Complete.")
 }
 
 // get correct data path from GOPATH
@@ -65,7 +65,7 @@ func (s *server) query(ip net.IP) *City {
 	city := &City{}
 	err := s.mmdb.Lookup(ip, city)
 	if err != nil {
-		log.Error(SERVICE, err)
+		log.Error(err)
 		return nil
 	}
 
