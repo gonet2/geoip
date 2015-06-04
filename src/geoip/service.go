@@ -15,6 +15,10 @@ const (
 	SERVICE = "[GEOIP]"
 )
 
+var (
+	ERROR_CANNOT_QUERY_IP = errors.New("cannot query ip")
+)
+
 // read the following fields only
 type City struct {
 	City struct {
@@ -78,7 +82,7 @@ func (s *server) QueryCountry(ctx context.Context, in *pb.GeoIP_IP) (*pb.GeoIP_N
 	if city := s.query(ip); city != nil {
 		return &pb.GeoIP_Name{Name: city.Country.IsoCode}, nil
 	}
-	return nil, errors.New("cannot query ip")
+	return nil, ERROR_CANNOT_QUERY_IP
 }
 
 // 查询IP所属城市
@@ -87,7 +91,7 @@ func (s *server) QueryCity(ctx context.Context, in *pb.GeoIP_IP) (*pb.GeoIP_Name
 	if city := s.query(ip); city != nil {
 		return &pb.GeoIP_Name{Name: city.City.Names["en"]}, nil
 	}
-	return nil, errors.New("cannot query ip")
+	return nil, ERROR_CANNOT_QUERY_IP
 }
 
 // 查询IP所属地区(省)
@@ -97,7 +101,7 @@ func (s *server) QuerySubdivision(ctx context.Context, in *pb.GeoIP_IP) (*pb.Geo
 		if len(city.Subdivisions) > 0 {
 			return &pb.GeoIP_Name{Name: city.Subdivisions[0].Names["en"]}, nil
 		}
-		return nil, errors.New("cannot query ip")
+		return nil, ERROR_CANNOT_QUERY_IP
 	}
-	return nil, errors.New("cannot query ip")
+	return nil, ERROR_CANNOT_QUERY_IP
 }
