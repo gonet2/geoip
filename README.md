@@ -1,4 +1,6 @@
 # geoip
+[![Build Status](https://travis-ci.org/GameGophers/geoip.svg?branch=master)](https://travis-ci.org/GameGophers/geoip)
+
 query geo-locations of given IPs
 
 # install
