@@ -1,5 +1,5 @@
 # geoip
-[![Build Status](https://travis-ci.org/GameGophers/geoip.svg?branch=master)](https://travis-ci.org/GameGophers/geoip)
+[![Build Status](https://travis-ci.org/gonet2/geoip.svg?branch=master)](https://travis-ci.org/gonet2/geoip)
 
 # 设计思路
 查询IP归属地，基于maxmind的geoip2库做的封装，如果需要最新的准确的数据，需要向maxmind购买。     
