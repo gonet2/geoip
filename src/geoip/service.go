@@ -2,7 +2,7 @@ package main
 
 import (
 	"errors"
-	log "github.com/GameGophers/libs/nsq-logger"
+	log "github.com/gonet2/libs/nsq-logger"
 	"github.com/oschwald/maxminddb-golang"
 	"golang.org/x/net/context"
 	"net"
