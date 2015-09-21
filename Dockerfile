@@ -5,6 +5,6 @@ COPY . /go
 WORKDIR /go
 ENV GOPATH /go:/go/.godeps
 RUN go install geoip
-RUN rm -rf pkg .godeps
+RUN rm -rf pkg src .godeps
 ENTRYPOINT /go/bin/geoip
 EXPOSE 50000

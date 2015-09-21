@@ -56,7 +56,7 @@ func (s *server) init() {
 func (s *server) data_path() (path string) {
 	paths := strings.Split(os.Getenv("GOPATH"), ":")
 	for k := range paths {
-		path = paths[k] + "/src/geoip/GeoIP2-City.mmdb"
+		path = paths[k] + "/GeoIP2-City.mmdb"
 		_, err := os.Lstat(path)
 		if err == nil {
 			return path
