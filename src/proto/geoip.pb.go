@@ -2,9 +2,20 @@
 // source: geoip.proto
 // DO NOT EDIT!
 
+/*
+Package proto is a generated protocol buffer package.
+
+It is generated from these files:
+	geoip.proto
+
+It has these top-level messages:
+	GeoIP
+*/
 package proto
 
 import proto1 "github.com/golang/protobuf/proto"
+import fmt "fmt"
+import math "math"
 
 import (
 	context "golang.org/x/net/context"
@@ -12,11 +23,9 @@ import (
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
-
-// Reference imports to suppress errors if they are not otherwise used.
 var _ = proto1.Marshal
+var _ = fmt.Errorf
+var _ = math.Inf
 
 type GeoIP struct {
 }
@@ -42,8 +51,9 @@ func (m *GeoIP_Name) Reset()         { *m = GeoIP_Name{} }
 func (m *GeoIP_Name) String() string { return proto1.CompactTextString(m) }
 func (*GeoIP_Name) ProtoMessage()    {}
 
-func init() {
-}
+// Reference imports to suppress errors if they are not otherwise used.
+var _ context.Context
+var _ grpc.ClientConn
 
 // Client API for GeoIPService service
 
@@ -100,9 +110,9 @@ func RegisterGeoIPServiceServer(s *grpc.Server, srv GeoIPServiceServer) {
 	s.RegisterService(&_GeoIPService_serviceDesc, srv)
 }
 
-func _GeoIPService_QueryCountry_Handler(srv interface{}, ctx context.Context, codec grpc.Codec, buf []byte) (interface{}, error) {
+func _GeoIPService_QueryCountry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 	in := new(GeoIP_IP)
-	if err := codec.Unmarshal(buf, in); err != nil {
+	if err := dec(in); err != nil {
 		return nil, err
 	}
 	out, err := srv.(GeoIPServiceServer).QueryCountry(ctx, in)
@@ -112,9 +122,9 @@ func _GeoIPService_QueryCountry_Handler(srv interface{}, ctx context.Context, co
 	return out, nil
 }
 
-func _GeoIPService_QuerySubdivision_Handler(srv interface{}, ctx context.Context, codec grpc.Codec, buf []byte) (interface{}, error) {
+func _GeoIPService_QuerySubdivision_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 	in := new(GeoIP_IP)
-	if err := codec.Unmarshal(buf, in); err != nil {
+	if err := dec(in); err != nil {
 		return nil, err
 	}
 	out, err := srv.(GeoIPServiceServer).QuerySubdivision(ctx, in)
@@ -124,9 +134,9 @@ func _GeoIPService_QuerySubdivision_Handler(srv interface{}, ctx context.Context
 	return out, nil
 }
 
-func _GeoIPService_QueryCity_Handler(srv interface{}, ctx context.Context, codec grpc.Codec, buf []byte) (interface{}, error) {
+func _GeoIPService_QueryCity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error) (interface{}, error) {
 	in := new(GeoIP_IP)
-	if err := codec.Unmarshal(buf, in); err != nil {
+	if err := dec(in); err != nil {
 		return nil, err
 	}
 	out, err := srv.(GeoIPServiceServer).QueryCity(ctx, in)
