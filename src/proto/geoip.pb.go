@@ -27,33 +27,50 @@ var _ = proto1.Marshal
 var _ = fmt.Errorf
 var _ = math.Inf
 
+// This is a compile-time assertion to ensure that this generated file
+// is compatible with the proto package it is being compiled against.
+const _ = proto1.ProtoPackageIsVersion1
+
 type GeoIP struct {
 }
 
-func (m *GeoIP) Reset()         { *m = GeoIP{} }
-func (m *GeoIP) String() string { return proto1.CompactTextString(m) }
-func (*GeoIP) ProtoMessage()    {}
+func (m *GeoIP) Reset()                    { *m = GeoIP{} }
+func (m *GeoIP) String() string            { return proto1.CompactTextString(m) }
+func (*GeoIP) ProtoMessage()               {}
+func (*GeoIP) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{0} }
 
 // The request message containing ip address
 type GeoIP_IP struct {
 	Ip string `protobuf:"bytes,1,opt,name=ip" json:"ip,omitempty"`
 }
 
-func (m *GeoIP_IP) Reset()         { *m = GeoIP_IP{} }
-func (m *GeoIP_IP) String() string { return proto1.CompactTextString(m) }
-func (*GeoIP_IP) ProtoMessage()    {}
+func (m *GeoIP_IP) Reset()                    { *m = GeoIP_IP{} }
+func (m *GeoIP_IP) String() string            { return proto1.CompactTextString(m) }
+func (*GeoIP_IP) ProtoMessage()               {}
+func (*GeoIP_IP) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{0, 0} }
 
 type GeoIP_Name struct {
 	Name string `protobuf:"bytes,1,opt,name=name" json:"name,omitempty"`
 }
 
-func (m *GeoIP_Name) Reset()         { *m = GeoIP_Name{} }
-func (m *GeoIP_Name) String() string { return proto1.CompactTextString(m) }
-func (*GeoIP_Name) ProtoMessage()    {}
+func (m *GeoIP_Name) Reset()                    { *m = GeoIP_Name{} }
+func (m *GeoIP_Name) String() string            { return proto1.CompactTextString(m) }
+func (*GeoIP_Name) ProtoMessage()               {}
+func (*GeoIP_Name) Descriptor() ([]byte, []int) { return fileDescriptor0, []int{0, 1} }
+
+func init() {
+	proto1.RegisterType((*GeoIP)(nil), "proto.GeoIP")
+	proto1.RegisterType((*GeoIP_IP)(nil), "proto.GeoIP.IP")
+	proto1.RegisterType((*GeoIP_Name)(nil), "proto.GeoIP.Name")
+}
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
 var _ grpc.ClientConn
+
+// This is a compile-time assertion to ensure that this generated file
+// is compatible with the grpc package it is being compiled against.
+const _ = grpc.SupportPackageIsVersion2
 
 // Client API for GeoIPService service
 
@@ -110,40 +127,58 @@ func RegisterGeoIPServiceServer(s *grpc.Server, srv GeoIPServiceServer) {
 	s.RegisterService(&_GeoIPService_serviceDesc, srv)
 }
 
-func _GeoIPService_QueryCountry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error) (interface{}, error) {
+func _GeoIPService_QueryCountry_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GeoIP_IP)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
-	out, err := srv.(GeoIPServiceServer).QueryCountry(ctx, in)
-	if err != nil {
-		return nil, err
+	if interceptor == nil {
+		return srv.(GeoIPServiceServer).QueryCountry(ctx, in)
 	}
-	return out, nil
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.GeoIPService/QueryCountry",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GeoIPServiceServer).QueryCountry(ctx, req.(*GeoIP_IP))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
-func _GeoIPService_QuerySubdivision_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error) (interface{}, error) {
+func _GeoIPService_QuerySubdivision_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GeoIP_IP)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
-	out, err := srv.(GeoIPServiceServer).QuerySubdivision(ctx, in)
-	if err != nil {
-		return nil, err
+	if interceptor == nil {
+		return srv.(GeoIPServiceServer).QuerySubdivision(ctx, in)
 	}
-	return out, nil
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.GeoIPService/QuerySubdivision",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GeoIPServiceServer).QuerySubdivision(ctx, req.(*GeoIP_IP))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
-func _GeoIPService_QueryCity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error) (interface{}, error) {
+func _GeoIPService_QueryCity_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GeoIP_IP)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
-	out, err := srv.(GeoIPServiceServer).QueryCity(ctx, in)
-	if err != nil {
-		return nil, err
+	if interceptor == nil {
+		return srv.(GeoIPServiceServer).QueryCity(ctx, in)
 	}
-	return out, nil
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.GeoIPService/QueryCity",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(GeoIPServiceServer).QueryCity(ctx, req.(*GeoIP_IP))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 var _GeoIPService_serviceDesc = grpc.ServiceDesc{
@@ -164,4 +199,19 @@ var _GeoIPService_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams: []grpc.StreamDesc{},
+}
+
+var fileDescriptor0 = []byte{
+	// 163 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x09, 0x6e, 0x88, 0x02, 0xff, 0xe2, 0xe2, 0x4e, 0x4f, 0xcd, 0xcf,
+	0x2c, 0xd0, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x05, 0x53, 0x4a, 0xfa, 0x5c, 0xac, 0xee,
+	0xa9, 0xf9, 0x9e, 0x01, 0x52, 0x02, 0x5c, 0x4c, 0x9e, 0x01, 0x42, 0x5c, 0x5c, 0x4c, 0x99, 0x05,
+	0x12, 0x8c, 0x0a, 0x8c, 0x1a, 0x9c, 0x52, 0x22, 0x5c, 0x2c, 0x7e, 0x89, 0xb9, 0xa9, 0x42, 0x3c,
+	0x5c, 0x2c, 0x79, 0x40, 0x1a, 0x22, 0x6a, 0xb4, 0x9a, 0x91, 0x8b, 0x07, 0xac, 0x23, 0x38, 0xb5,
+	0xa8, 0x2c, 0x33, 0x39, 0x55, 0xc8, 0x88, 0x8b, 0x27, 0xb0, 0x34, 0xb5, 0xa8, 0xd2, 0x39, 0xbf,
+	0x34, 0xaf, 0xa4, 0xa8, 0x52, 0x88, 0x1f, 0x62, 0x81, 0x1e, 0x58, 0x91, 0x1e, 0xd0, 0x64, 0x41,
+	0x14, 0x01, 0xb0, 0x91, 0x66, 0x5c, 0x02, 0x60, 0x3d, 0xc1, 0xa5, 0x49, 0x29, 0x99, 0x65, 0x99,
+	0xc5, 0x99, 0xf9, 0x79, 0x44, 0xe9, 0xd3, 0xe7, 0xe2, 0x84, 0xd8, 0x95, 0x59, 0x42, 0x94, 0x45,
+	0x49, 0x6c, 0x60, 0x11, 0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0x5a, 0xd2, 0x25, 0xcd, 0xfb,
+	0x00, 0x00, 0x00,
 }
