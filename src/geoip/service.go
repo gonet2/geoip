@@ -7,7 +7,7 @@ import (
 	"os"
 	"strings"
 
-	log "github.com/gonet2/libs/nsq-logger"
+	log "github.com/Sirupsen/logrus"
 	"github.com/oschwald/maxminddb-golang"
 	"golang.org/x/net/context"
 )
@@ -42,15 +42,15 @@ type server struct {
 
 func (s *server) init() {
 	// 载入IP表
-	log.Trace("Loading GEOIP City...")
+	log.Debug("Loading GEOIP City...")
 	reader, err := maxminddb.Open(s.data_path())
 	if err != nil {
-		log.Critical(err)
+		log.Panic(err)
 		os.Exit(-1)
 	}
 
 	s.mmdb = reader
-	log.Trace("GEOIP City Load Complete.")
+	log.Debug("GEOIP City Load Complete.")
 }
 
 // get correct data path from GOPATH

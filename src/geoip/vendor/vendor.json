@@ -3,40 +3,22 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "htjvdG/znrHmFYRQBqA2vHrJsF4=",
+			"path": "github.com/Sirupsen/logrus",
+			"revision": "f3cfb454f4c209e6668c95216c4744b8fddb2356",
+			"revisionTime": "2016-06-01T11:32:10Z"
+		},
+		{
 			"checksumSHA1": "M/1HiQFl2DyE+q3pFf8swvAQ3MY=",
 			"path": "github.com/golang/protobuf/proto",
 			"revision": "3852dcfda249c2097355a6aabb199a28d97b30df",
 			"revisionTime": "2016-06-29T21:10:53Z"
 		},
 		{
-			"checksumSHA1": "NUJZj3hmnUzA3PEoAwUvPZ1rS3E=",
-			"path": "github.com/gonet2/libs/nsq-logger",
-			"revision": "e22623e558cc2f447cb308cf09af61b69979ffba",
-			"revisionTime": "2016-07-05T07:41:53Z"
-		},
-		{
 			"checksumSHA1": "zpySGvc5SKTa1uJ9wt24zvEFi1c=",
 			"path": "github.com/oschwald/maxminddb-golang",
 			"revision": "eccd8d633e8f832af840a3f371f010a521e98b3b",
 			"revisionTime": "2016-07-10T02:12:11Z"
-		},
-		{
-			"checksumSHA1": "sKfYQurIIt+ldKDDF7TRbg9w20I=",
-			"path": "github.com/pquerna/ffjson/ffjson",
-			"revision": "a16f62ecdaf7d13077d64d3cdb1cc43486119809",
-			"revisionTime": "2016-06-13T14:33:54Z"
-		},
-		{
-			"checksumSHA1": "D1JbeyQhazKyXOokR5w7XrHWWw8=",
-			"path": "github.com/pquerna/ffjson/fflib/v1",
-			"revision": "a16f62ecdaf7d13077d64d3cdb1cc43486119809",
-			"revisionTime": "2016-06-13T14:33:54Z"
-		},
-		{
-			"checksumSHA1": "iZHmHPBzKJiS6ROUaVOf4DVOhbA=",
-			"path": "github.com/pquerna/ffjson/fflib/v1/internal",
-			"revision": "a16f62ecdaf7d13077d64d3cdb1cc43486119809",
-			"revisionTime": "2016-06-13T14:33:54Z"
 		},
 		{
 			"checksumSHA1": "9jjO5GjLa0XF/nfWihF02RoH4qc=",
