@@ -1,11 +1,12 @@
 package main
 
 import (
-	log "github.com/gonet2/libs/nsq-logger"
-	"google.golang.org/grpc"
+	pb "geoip/proto"
 	"net"
 	"os"
-	pb "proto"
+
+	log "github.com/gonet2/libs/nsq-logger"
+	"google.golang.org/grpc"
 )
 
 const (

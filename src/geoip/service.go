@@ -2,13 +2,14 @@ package main
 
 import (
 	"errors"
+	pb "geoip/proto"
+	"net"
+	"os"
+	"strings"
+
 	log "github.com/gonet2/libs/nsq-logger"
 	"github.com/oschwald/maxminddb-golang"
 	"golang.org/x/net/context"
-	"net"
-	"os"
-	pb "proto"
-	"strings"
 )
 
 const (
