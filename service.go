@@ -7,8 +7,9 @@ import (
 	"os"
 	"strings"
 
-	log "github.com/Sirupsen/logrus"
 	"github.com/oschwald/maxminddb-golang"
+
+	log "github.com/Sirupsen/logrus"
 	"golang.org/x/net/context"
 )
 
@@ -57,7 +58,7 @@ func (s *server) init() {
 func (s *server) data_path() (path string) {
 	paths := strings.Split(os.Getenv("GOPATH"), ":")
 	for k := range paths {
-		path = paths[k] + "/GeoIP2-City.mmdb"
+		path = paths[k] + "/src/GeoIP2-City.mmdb"
 		_, err := os.Lstat(path)
 		if err == nil {
 			return path
