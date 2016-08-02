@@ -1,10 +1,11 @@
-language: go
-go:
-    - tip
-install:
-    - export GOPATH=$GOPATH/src/github.com/gonet2/geoip
-    - cd $GOPATH
-    - go install geoip
+sudo: required
+
+services:
+    - docker
+
+before_install:
+    - docker build -t xtaci/geoip .
+
 before_script:
 script:
     - exit 0
